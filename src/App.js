@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Algos from "./algos.json";
+import Algos from "./Algos";
 
 function App() {
-  const algos = Algos;
+  const [algos, setAlgos] = useState(Algos);
   const [show, setShow] = useState(false);
   const [seeCode, setSeeCode] = useState(0);
 
