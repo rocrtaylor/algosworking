@@ -15,7 +15,7 @@ function App() {
   }
 
   useEffect(() => {
-    setSeeCode(seeCode)
+    setSeeCode(algos)
   }, [])
 
   return (
