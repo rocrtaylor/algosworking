@@ -1,18 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react";
 
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import Algos from "./Algos"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Algos from "./Algos";
 
 function App() {
-  const algos = Algos
-  const [show, setShow] = useState(false)
-  const [seeCode, setSeeCode] = useState(0)
+  const [algos, setAlgos] = useState(Algos);
+  const [show, setShow] = useState(false);
+  const [seeCode, setSeeCode] = useState(0);
+
+  useEffect(() => {
+    setAlgos(algos);
+  }, []);
 
   const handleShow = (index) => {
-    setShow(!show)
-    setSeeCode(index)
-  }
+    setShow(!show);
+    setSeeCode(index);
+  };
 
   return (
     <>
@@ -30,12 +34,12 @@ function App() {
                 </div>
               ) : null}
             </div>
-          )
+          );
         })}
       </div>
       <Footer style={{ backgroundColor: "blue" }} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
