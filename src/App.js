@@ -12,12 +12,14 @@ function App() {
   const imgRef = useRef();
 
   useEffect(() => {
+    //
     console.log("first render");
+    //
     console.log(imgRef);
-    return () => {
-      setAlgos(algos);
-    };
-  }, []);
+    //
+
+    setAlgos(algos);
+  }, [algos]);
 
   const handleShow = (index) => {
     setShow(!show);
