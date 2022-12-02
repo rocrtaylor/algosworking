@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,13 +9,10 @@ function App() {
   const [show, setShow] = useState(false);
   const [seeCode, setSeeCode] = useState(0);
 
-  const imgRef = useRef();
-
   useEffect(() => {
     //
     console.log("first render");
-    //
-    console.log(imgRef);
+
     //
 
     setAlgos(algos);
@@ -38,7 +35,7 @@ function App() {
 
               {show && seeCode === index ? (
                 <div className="column">
-                  <img ref={imgRef} src={item.icon} alt={"code"} />
+                  <img src={item.icon} alt={"code"} />
                 </div>
               ) : null}
             </div>
