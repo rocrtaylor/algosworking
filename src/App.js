@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Algos from "./Algos";
 
 function App() {
-  const [algos, setAlgos] = useState(Algos);
+  const [algos, setAlgos] = useState([Algos]);
   const [show, setShow] = useState(false);
   const [seeCode, setSeeCode] = useState(0);
 
