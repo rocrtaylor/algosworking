@@ -1,16 +1,22 @@
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Algos from "./Algos";
 
 function App() {
-  const [algos, setAlgos] = useState([Algos]);
+  const [algos, setAlgos] = useState(Algos);
   const [show, setShow] = useState(false);
   const [seeCode, setSeeCode] = useState(0);
 
+  const imgRef = useRef();
+
   useEffect(() => {
-    setAlgos(algos);
+    console.log("first render");
+    console.log(imgRef);
+    return () => {
+      setAlgos(algos);
+    };
   }, []);
 
   const handleShow = (index) => {
@@ -30,7 +36,7 @@ function App() {
 
               {show && seeCode === index ? (
                 <div className="column">
-                  <img src={item.icon} alt={"code"} />
+                  <img ref={imgRef} src={item.icon} alt={"code"} />
                 </div>
               ) : null}
             </div>
